@@ -1,25 +1,42 @@
 import React, {} from 'react';
-import { View, TouchableOpacity, Image, StyleSheet } from 'react-native';
+
+import { View, TouchableOpacity, SvgUri, StyleSheet } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
 
 <View style={styles.container}>
 
     <View style={styles.header}>
-        <Image source={require('../assets/logo.svg')} />
+        <SvgUri
+                width="100%"
+                height="100%"
+                uri="../assets/logo.svg"
+            />
     </View>
 
     <View>
         <TouchableOpacity onPress={() => navigation.navigate('Favourites')}>
-            <Image source={require('../assets/favourite.svg')}/>
+            <SvgUri
+                width="100%"
+                height="100%"
+                uri="../assets/favourite.svg"
+            />
         </TouchableOpacity>
 
         <View>
-            <Image source={require('../assets/home.svg')}/>
+            <SvgUri
+                width="100%"
+                height="100%"
+                uri="../assets/home.svg"
+            />
         </View>
 
         <TouchableOpacity onPress={() => navigation.navigate('Shoppingbasket')}>
-            <Image source={require('../assets/basket.svg')}/>
+            <SvgUri
+                width="100%"
+                height="100%"
+                uri="../assets/basket.svg"
+            />
         </TouchableOpacity>
 
     </View>
@@ -38,4 +55,3 @@ const styles = StyleSheet.create({
 });
 
 export default HomeScreen;
-
