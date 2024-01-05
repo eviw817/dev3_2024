@@ -1,46 +1,30 @@
-import React, {} from 'react';
-
-import { View, TouchableOpacity, SvgUri, StyleSheet } from 'react-native';
+import React, { } from 'react';
+import {Svg, Circle, Rect} from 'react-native-svg';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
 
 const HomeScreen = ({ navigation }) => {
 
-<View style={styles.container}>
+    <View style={styles.container}>
 
-    <View style={styles.header}>
-        <SvgUri
-                width="100%"
-                height="100%"
-                uri="../assets/logo.svg"
-            />
-    </View>
-
-    <View>
-        <TouchableOpacity onPress={() => navigation.navigate('Favourites')}>
-            <SvgUri
-                width="100%"
-                height="100%"
-                uri="../assets/favourite.svg"
-            />
-        </TouchableOpacity>
-
-        <View>
-            <SvgUri
-                width="100%"
-                height="100%"
-                uri="../assets/home.svg"
-            />
+        <View style={styles.header}>
+            
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Shoppingbasket')}>
-            <SvgUri
-                width="100%"
-                height="100%"
-                uri="../assets/basket.svg"
-            />
-        </TouchableOpacity>
+        <View style={styles.footer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Favourites')}>
+    
+            </TouchableOpacity>
 
+            <View>
+            
+            </View>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Shoppingbasket')}>
+            
+            </TouchableOpacity>
+
+        </View>
     </View>
-</View>
 
 };
 
@@ -50,7 +34,10 @@ const styles = StyleSheet.create({
     },
     header: {
         backgroundColor: '#f7c389',
-    }
+    },
+    footer: {
+        backgroundColor: '#fffefe',
+    },
 
 });
 
