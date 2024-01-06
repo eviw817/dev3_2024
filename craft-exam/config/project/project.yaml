@@ -1,0 +1,22 @@
+dateModified: 1704545689
+email:
+  fromEmail: r0837764@student.thomasmore.be
+  fromName: Floresco
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    61da9f82-35d6-45cd-be8e-e2e50071b05d: Floresco # Floresco
+    133c78df-33fb-423b-b305-8817da04930d: Common # Common
+    e40437f4-f6c5-4dda-916f-18b505305057: Floresco # Floresco
+system:
+  edition: solo
+  live: true
+  name: Floresco
+  schemaVersion: 4.5.3.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
