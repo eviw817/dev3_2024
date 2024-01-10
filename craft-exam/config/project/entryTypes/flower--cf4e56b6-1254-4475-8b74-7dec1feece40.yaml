@@ -1,0 +1,137 @@
+fieldLayouts:
+  40a2a86e-7e18-4958-85c5-fcdd3a37ff33:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 49f3cdec-5a0b-472c-9d5f-4b30c2bf3819
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e21666e-051e-4f4f-b369-7dd8be77c6f8 # Picture
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b24a8749-43b3-4ef7-8cf2-16f849503066
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 25f0379f-4317-4715-b3ec-066074e4ff3e # Reference Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e9c56d83-a1f6-4103-891a-47a7895316a7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8bc5c7fd-786d-4081-b0a6-a5a1624534ce # Leaves
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3d67281a-730c-4a2c-acfe-f4137333efc7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b72d1f76-60ad-446a-9210-1f672441054b # Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bf3f52d-4398-4e33-a40d-4cd814222e95
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Essential information'
+        uid: cb6295c3-59d7-459e-b71a-3e2d8ee5d4f5
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9316a557-8bdd-4dcd-b365-eb6573784803 # Information
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9b1badee-018d-46f8-ba54-aa1023e0525e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 4a4be530-9276-414e-a5cc-d8a8a06b9f69 # Blooming Season
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bb4eb7e4-7ebe-4fe2-926d-8f9d9483a5c9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 0ad61e75-9ecd-4ec8-a289-e2019fabec6c
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bf1b6e76-bfb6-44d3-888b-2aa68a601c07
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Flower information'
+        uid: 355e53c9-8cd3-49ad-8e7b-c3ca334d7fcd
+        userCondition: null
+handle: flower
+hasTitleField: true
+name: Flower
+section: f6f9e9bd-7007-4998-a246-27fec2c9f480 # Flowers
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

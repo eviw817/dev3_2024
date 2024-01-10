@@ -1,0 +1,56 @@
+columnSuffix: sybyuymh
+contentColumnType: string
+fieldGroup: 133c78df-33fb-423b-b305-8817da04930d # Common
+handle: bloomingSeason
+instructions: null
+name: 'Blooming Season'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Winter
+        -
+          - value
+          - winter
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Spring
+        -
+          - value
+          - spring
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Summer
+        -
+          - value
+          - summer
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Fall
+        -
+          - value
+          - fall
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\MultiSelect

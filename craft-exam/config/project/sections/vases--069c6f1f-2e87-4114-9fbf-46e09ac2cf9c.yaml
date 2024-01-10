@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: vases
+name: Vases
+propagationMethod: all
+siteSettings:
+  61da9f82-35d6-45cd-be8e-e2e50071b05d: # Floresco
+    enabledByDefault: true
+    hasUrls: true
+    template: vases/_entry
+    uriFormat: 'vases/{slug}'
+type: channel

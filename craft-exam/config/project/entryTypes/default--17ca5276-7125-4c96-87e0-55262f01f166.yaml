@@ -1,0 +1,113 @@
+fieldLayouts:
+  d4ae9f85-221f-4f3a-8278-34fa0e933305:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e2ce02a6-eb9c-40aa-9913-8bda26682186
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 8e21666e-051e-4f4f-b369-7dd8be77c6f8 # Picture
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e610ccea-5538-41ab-84ee-4c4e14058c10
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 25f0379f-4317-4715-b3ec-066074e4ff3e # Reference Color
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 38bef8bc-1930-465e-8aad-1ad8c16d26a0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b72d1f76-60ad-446a-9210-1f672441054b # Price
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c8c273c4-be42-4d13-9904-66e3ddca6868
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Essential information'
+        uid: 21573fe1-87b0-4903-85ec-70112ebfe2f5
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 9316a557-8bdd-4dcd-b365-eb6573784803 # Information
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 95708c10-b375-4fe6-9698-ad132c7678e9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: aba33779-afc2-4261-935f-1086e096b9b1 # Manufacturer
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d7f7609-75b6-4efb-839f-94b1050eabff
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Vase information'
+        uid: 21136167-f3a4-4bb7-838c-a8551293f257
+        userCondition: null
+handle: default
+hasTitleField: true
+name: Default
+section: 069c6f1f-2e87-4114-9fbf-46e09ac2cf9c # Vases
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,12 @@
+columnSuffix: ogcfisim
+contentColumnType: char(7)
+fieldGroup: 133c78df-33fb-423b-b305-8817da04930d # Common
+handle: color
+instructions: null
+name: Color
+searchable: false
+settings:
+  defaultColor: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Color

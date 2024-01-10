@@ -1,0 +1,19 @@
+columnSuffix: hywclmum
+contentColumnType: text
+fieldGroup: 133c78df-33fb-423b-b305-8817da04930d # Common
+handle: manufacturer
+instructions: null
+name: Manufacturer
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: 'The Flower Factory'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,14 @@
+columnSuffix: tpwczvkp
+contentColumnType: boolean
+fieldGroup: 133c78df-33fb-423b-b305-8817da04930d # Common
+handle: leaves
+instructions: null
+name: Leaves
+searchable: false
+settings:
+  default: true
+  offLabel: 'Without leaves'
+  onLabel: 'With leaves'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

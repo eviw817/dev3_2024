@@ -158,9 +158,10 @@
             <div class="content">
                 <h1>Welcome</h1>
                 <p>Thanks for installing Craft CMS!</p>
-                <p>You’re looking at the <code>index.twig</code> template file located in your
-                    <code>templates/</code> folder. Once you’re ready to start building out your site’s
-                    front end, you can replace this with something custom.</p>
+                    {% set entryQuery = craft.entries()
+  .section('news')
+  .orderBy('postDate DESC')
+  .limit(10) %}
                 <p>If you’re new to Craft CMS, take some time to check out the resources on the right
                     when you get a chance&mdash;especially
                     <a href="https://craftcms.com/discord" target="_blank">Discord</a>

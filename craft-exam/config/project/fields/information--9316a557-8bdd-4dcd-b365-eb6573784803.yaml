@@ -1,0 +1,19 @@
+columnSuffix: vnmnjgyy
+contentColumnType: text
+fieldGroup: 133c78df-33fb-423b-b305-8817da04930d # Common
+handle: information
+instructions: null
+name: Information
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: 'This item has no information.'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
