@@ -23,11 +23,18 @@
 
 			nav {
 				background: #f9d2a5;
-				padding: 30px 30px 15px 45px;
+                padding: 20px;
 				display: flex;
 				flex-flow: row wrap;
 				align-items: center;
+                justify-content: space-between;
 			}
+
+            .logo {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+            }
 
 			#name {
 				color: #000;
@@ -35,24 +42,28 @@
 				font-size: 2.5em;
 			}
 
+            #season-selection {
+                display: flex;
+            }
+
 			h2 {
 				margin-top: 40px;
-                margin-left: 40px;
-                margin-bottom: -20px;
+				margin-left: 40px;
+				margin-bottom: -20px;
 				color: #30BCED;
-                font-size: 2em;
+				font-size: 2em;
 				text-decoration: underline;
 			}
+
+            #aside > h2 {
+                padding-top: 20px;
+            }
 
 			h3 {
 				margin-top: 24px;
 				font-size: 1.5em;
 				color: #F75590;
 				text-decoration: underline dotted;
-			}
-
-			h2:first-child {
-				margin-top: 0;
 			}
 
 			summary {
@@ -90,7 +101,6 @@
 
 			.leavescheck {
 				margin-top: 10px;
-
 			}
 
 			.go {
@@ -131,26 +141,54 @@
 			}
 
 			.content {
-				padding: 35px calc(35px + env(safe-area-inset-right));
+				padding: 2rem;
 				display: flex;
+                justify-content: space-evenly;
 				flex-flow: row wrap;
 				gap: 20px;
 			}
+
+			.flower {
+				width: 250px;
+			}
+
+            .vase {
+                width: 250px;
+            }
+
+            @media only screen and (max-width: 320px) {
+                .flower {
+				    width: 200px;
+			    }
+                .vase {
+                    width: 200px;
+                }
+            }
+
 		</style>
 	</head>
 	<body class="ltr">
 		<div id="container">
 			<div id="modal">
 				<div id="main">
-
 					<nav>
 						{% set branding = craft.entries()
                             .section('branding')
                             .slug('branding')
                             .one() %}
 
-						<img src="{{branding.logo.one().url}}" alt="Logo" width="100" height="120">
-						<h1 id="name">Floresco</h1>
+                        <div class="logo">
+						    <img src="{{branding.logo.one().url}}" alt="Logo" width="100" height="120">
+						    <h1 id="name">Floresco</h1>
+                        </div>
+
+						<div id="season-selection">
+							<label><input type="checkbox" value="spring" checked>Spring</input><label>
+							<label><input type="checkbox" value="summer" checked>Summer</input><label>
+							<label><input type="checkbox" value="fall" checked>Fall</input><label>
+							<label><input type="checkbox" value="winter" checked>Winter</input><label>
+						</div>
+						
 					</nav>
 
 					<h2>Flowers</h2>
@@ -164,8 +202,11 @@
                             .all() %}
 
 						{% for entry in entryQuery %}
+							{% if entry.bloomingSeason|length %}
+							<div class="flower" data-seasons="{{entry.bloomingSeason|join(';')}}">
+							{% else %}
 
-							<div>
+							{% endif %}
 								<h3>{{ entry.title }}</h3>
 
 								<img src="{{ entry.picture.one().url }}" alt="Flower picture" width="200" height="250">
@@ -210,7 +251,7 @@
 				</div>
 				<div id="aside">
 
-					<h1>Vases</h1>
+					<h2>Vases</h2>
 
 					<div class="content">
 
@@ -222,8 +263,8 @@
 
 						{% for entry in entryQuery %}
 
-							<div>
-								<h2>{{ entry.title }}</h2>
+							<div class="vase">
+								<h3>{{ entry.title }}</h3>
 
 								<img src="{{ entry.picture.one().url }}" alt="Vase picture" width="200" height="250">
 
@@ -237,9 +278,39 @@
 								{% endif %}
 							</div>
 						{% endfor %}
-                    </div>
-                </div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
+	<script>
+		let selectedSeasons = ["spring", "fall", "winter", "summer"];
+		
+		document.addEventListener("DOMContentLoaded", () => {
+			document.querySelectorAll("#season-selection input").forEach(e => e.addEventListener("change", onSelectSeason))
+		})
+
+		function onSelectSeason(e) {
+			if(selectedSeasons.includes(this.value)) {
+				let index = selectedSeasons.indexOf(this.value);
+        		selectedSeasons.splice(index, 1);
+			}
+			else {
+				selectedSeasons.push(this.value)
+			}
+			updateDisplayedFlowers();
+		}
+
+		function updateDisplayedFlowers() {
+			document.querySelectorAll(".flower").forEach((el) => {
+				el.style.display = "none";
+				let flowerSeasons = el.getAttribute("data-seasons").split(";");
+				selectedSeasons.forEach((season) => {
+					if(flowerSeasons.includes(season)){ 
+						el.style.display = "block";
+					}
+				});
+			})
+		}
+	</script>
 </html>
