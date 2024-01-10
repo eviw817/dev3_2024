@@ -21,47 +21,48 @@
 				display: flex;
 			}
 
-            nav{ 
-                background: #f9d2a5;
-                padding: 30px;
-                padding-left: 45px;
-            }
+			nav {
+				background: #f9d2a5;
+				padding: 30px 30px 15px 45px;
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+			}
 
-            #name {
-                color: #000;
-                text-decoration: none;
-                font-size: 2em;
-            }
-
-			h1 {
-				margin-top: 0;
-                color: #30BCED;
-                text-decoration: underline;
+			#name {
+				color: #000;
+				text-decoration: none;
+				font-size: 2.5em;
 			}
 
 			h2 {
+				margin-top: 40px;
+                margin-left: 40px;
+                margin-bottom: -20px;
+				color: #30BCED;
+                font-size: 2em;
+				text-decoration: underline;
+			}
+
+			h3 {
 				margin-top: 24px;
 				font-size: 1.5em;
-                color: #F75590;
-                text-decoration: underline dotted;
+				color: #F75590;
+				text-decoration: underline dotted;
 			}
 
 			h2:first-child {
 				margin-top: 0;
 			}
 
-            h3{ 
-                color: #EF8A17;
-            }
+			summary {
+				color: #EF8A17;
+			}
 
-            summary{ 
-                color: #EF8A17;
-            }
-
-            h4{
-                font-size: 1.25em;
-                color: #F75590;
-            }
+			h4 {
+				font-size: 1.25em;
+				color: #F75590;
+			}
 
 			p {
 				line-height: 1.4em;
@@ -85,6 +86,11 @@
 
 			a:hover {
 				text-decoration: underline;
+			}
+
+			.leavescheck {
+				margin-top: 10px;
+
 			}
 
 			.go {
@@ -122,11 +128,13 @@
 
 			#aside {
 				background: #bfe9d3;
-                overflow: auto;
 			}
 
 			.content {
 				padding: 35px calc(35px + env(safe-area-inset-right));
+				display: flex;
+				flex-flow: row wrap;
+				gap: 20px;
 			}
 		</style>
 	</head>
@@ -135,19 +143,19 @@
 			<div id="modal">
 				<div id="main">
 
-                    <nav>
-                        {% set branding = craft.entries()
+					<nav>
+						{% set branding = craft.entries()
                             .section('branding')
                             .slug('branding')
                             .one() %}
 
-                            <img src="{{branding.logo.one().url}}" alt="Logo" width="100" height="150">
-                        <h1 id="name">Floresco</h1>
-                    </nav>
+						<img src="{{branding.logo.one().url}}" alt="Logo" width="100" height="120">
+						<h1 id="name">Floresco</h1>
+					</nav>
+
+					<h2>Flowers</h2>
 
 					<div class="content">
-
-						<h1>Flowers</h1>
 
 						{% set entryQuery = craft.entries()
                             .section('flowers')
@@ -155,53 +163,56 @@
                             .leaves(true)
                             .all() %}
 
-						<h4>
-							{% for entry in entryQuery %}
-								<h2>{{ entry.title }}</h2>
+						{% for entry in entryQuery %}
 
-									<img src="{{ entry.picture.one().url }}" alt="Flower picture" width="200" height="250">
+							<div>
+								<h3>{{ entry.title }}</h3>
 
-                                {{ hiddenInput('Leaves[leaves]', '') }}
+								<img src="{{ entry.picture.one().url }}" alt="Flower picture" width="200" height="250">
 
-                                    {{ tag('input', {
+								{% if entry.leaves %}
+									<p>
+										{{ tag('input', {
                                         type: 'checkbox',
-                                        name: 'Leaves[leaves]',
+                                        name: 'leaves',
+                                        class: "leavescheck",
                                         value: '1',
                                         checked: (entry.leaves ?? false) ? true : false,
                                     }) }}
 
-                                {% if entry.leaves %}
-                                    <p>With leaves</p>
-                                {% else %}
-                                    <p>Without leaves</p>
-                                {% endif %}
+										With leaves</p>
+								{% else %}
+									<p>Without leaves</p>
+								{% endif %}
 
-                                <h4>{{ entry.price|money }}</h4>
-                                
-                                {% if entry.information %}
-                                    <details>
-                                        <summary>Information</summary>
-                                            <p>{{ entry.information }}</p>
-                                    </details>
-                                {% endif %}
+								<h4>{{ entry.price|money }}</h4>
 
-                                {% if entry.bloomingSeason|length %}
-                                    <h3>Blooming Seasons</h3>
-                                    <ul>
-                                        {% for season in entry.bloomingSeason %}
-                                        <li>{{season.label}}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
+								{% if entry.information %}
+									<details>
+										<summary>Information</summary>
+										<p>{{ entry.information }}</p>
+									</details>
+								{% endif %}
 
-							{% endfor %}
-						</h4>
-						</p>
+								{% if entry.bloomingSeason|length %}
+									<details>
+										<summary>Blooming Season</summary>
+										<ul>
+											{% for season in entry.bloomingSeason %}
+												<li>{{season.label}}</li>
+											{% endfor %}
+										</ul>
+									</details>
+								{% endif %}
+							</div>
+						{% endfor %}
 					</div>
 				</div>
 				<div id="aside">
+
+					<h1>Vases</h1>
+
 					<div class="content">
-						<h1>Vases</h1>
 
 						{% set entryQuery = craft.entries()
                             .section('vases')
@@ -209,26 +220,25 @@
                             .leaves(true)
                             .all() %}
 
-						<h4>
-							{% for entry in entryQuery %}
+						{% for entry in entryQuery %}
+
+							<div>
 								<h2>{{ entry.title }}</h2>
 
 								<img src="{{ entry.picture.one().url }}" alt="Vase picture" width="200" height="250">
 
-                                <h4>{{ entry.price|money }}</h4>
-                                
-                                {% if entry.information %}
-                                    <details>
-                                        <summary>Information</summary>
-                                            <p>{{ entry.information }}</p>
-                                    </details>
-                                {% endif %}
+								<h4>{{ entry.price|money }}</h4>
 
-							{% endfor %}
-						</h4>
-						</p>
-					</div>
-				</div>
+								{% if entry.information %}
+									<details>
+										<summary>Information</summary>
+										<p>{{ entry.information }}</p>
+									</details>
+								{% endif %}
+							</div>
+						{% endfor %}
+                    </div>
+                </div>
 			</div>
 		</div>
 	</body>
