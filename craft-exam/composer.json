@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "4.6.0",
+    "craftcms/element-api": "3.0.1.1",
     "studioespresso/craft-splashingimages": "3.0.0",
     "vlucas/phpdotenv": "^5.4.0"
   },

@@ -1,4 +1,4 @@
-dateModified: 1704919811
+dateModified: 1704921080
 email:
   fromEmail: r0837764@student.thomasmore.be
   fromName: Floresco
@@ -36,6 +36,10 @@ meta:
     f5648cce-da6c-4419-8deb-6169e914aafc: Branding # Branding
     fb5b2491-c473-4e5d-8952-94ed4820770c: Color # Color
 plugins:
+  element-api:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   splashing-images:
     edition: standard
     enabled: true
