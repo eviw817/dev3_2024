@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: branding
+name: Branding
+propagationMethod: all
+siteSettings:
+  61da9f82-35d6-45cd-be8e-e2e50071b05d: # Floresco
+    enabledByDefault: true
+    hasUrls: true
+    template: branding/_entry
+    uriFormat: branding
+type: single

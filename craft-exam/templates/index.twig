@@ -18,23 +18,50 @@
 			body {
 				margin: 0;
 				padding: 0;
-				background-color: hsl(212, 60%, 97%);
-				color: hsl(209, 18%, 30%);
 				display: flex;
 			}
 
+            nav{ 
+                background: #f9d2a5;
+                padding: 30px;
+                padding-left: 45px;
+            }
+
+            #name {
+                color: #000;
+                text-decoration: none;
+                font-size: 2em;
+            }
+
 			h1 {
 				margin-top: 0;
+                color: #30BCED;
+                text-decoration: underline;
 			}
 
 			h2 {
 				margin-top: 24px;
-				font-size: 1em;
+				font-size: 1.5em;
+                color: #F75590;
+                text-decoration: underline dotted;
 			}
 
 			h2:first-child {
 				margin-top: 0;
 			}
+
+            h3{ 
+                color: #EF8A17;
+            }
+
+            summary{ 
+                color: #EF8A17;
+            }
+
+            h4{
+                font-size: 1.25em;
+                color: #F75590;
+            }
 
 			p {
 				line-height: 1.4em;
@@ -90,61 +117,16 @@
 			}
 
 			#modal {
-				background: #fff;
+				background: #dceecd;
 			}
 
 			#aside {
-				background: hsl(212, 60%, 97%);
+				background: #bfe9d3;
+                overflow: auto;
 			}
 
 			.content {
 				padding: 35px calc(35px + env(safe-area-inset-right));
-			}
-
-			@media(min-width:768px) {
-				#modal {
-					display: flex;
-				}
-
-				#main {
-					width: 50%;
-					overflow: auto;
-				}
-
-				#aside {
-					width: 50%;
-					overflow: auto;
-				}
-			}
-
-			@media(min-width:768px) and(min-height: 376px) {
-				body {
-					background-color: hsl(212, 50%, 93%);
-					background-image: url("{{ view.getAssetManager().getPublishedUrl('@app/web/assets/installer/dist', true, 'images/installer-bg.png') }}");
-					background-repeat: no-repeat;
-					background-size: cover;
-					background-position: center center;
-				}
-
-				#container {
-					display: flex;
-					padding: 24px;
-					align-items: center;
-					justify-content: center;
-				}
-
-				#modal {
-					height: 100%;
-					max-width: 800px;
-					max-height: 525px;
-					border-radius: 4px;
-					overflow: auto;
-					box-shadow: 0 25px 100px rgba(0, 0, 0, 0.5);
-				}
-
-				#aside {
-					overflow: auto;
-				}
 			}
 		</style>
 	</head>
@@ -152,8 +134,18 @@
 		<div id="container">
 			<div id="modal">
 				<div id="main">
+
+                    <nav>
+                        {% set branding = craft.entries()
+                            .section('branding')
+                            .slug('branding')
+                            .one() %}
+
+                            <img src="{{branding.logo.one().url}}" alt="Logo" width="100" height="150">
+                        <h1 id="name">Floresco</h1>
+                    </nav>
+
 					<div class="content">
-						<h1>Floresco</h1>
 
 						<h1>Flowers</h1>
 
@@ -165,12 +157,9 @@
 
 						<h4>
 							{% for entry in entryQuery %}
-								<h3>{{ entry.title }}</h3>
+								<h2>{{ entry.title }}</h2>
 
-								{% set pictures = entry.picture.all() %}
-								{% for picture in pictures %}
-									<img src="{{ picture.url }}" alt="Flower picture" width="200" height="250">
-								{% endfor %}
+									<img src="{{ entry.picture.one().url }}" alt="Flower picture" width="200" height="250">
 
                                 {{ hiddenInput('Leaves[leaves]', '') }}
 
@@ -187,11 +176,22 @@
                                     <p>Without leaves</p>
                                 {% endif %}
 
-                                <b>{{ entry.price|money }}</b>
+                                <h4>{{ entry.price|money }}</h4>
                                 
                                 {% if entry.information %}
-                                    <h4>Information</h4>
-                                    {{ entry.information|markdown }}
+                                    <details>
+                                        <summary>Information</summary>
+                                            <p>{{ entry.information }}</p>
+                                    </details>
+                                {% endif %}
+
+                                {% if entry.bloomingSeason|length %}
+                                    <h3>Blooming Seasons</h3>
+                                    <ul>
+                                        {% for season in entry.bloomingSeason %}
+                                        <li>{{season.label}}</li>
+                                        {% endfor %}
+                                    </ul>
                                 {% endif %}
 
 							{% endfor %}
@@ -201,8 +201,6 @@
 				</div>
 				<div id="aside">
 					<div class="content">
-						<h1>Floresco</h1>
-
 						<h1>Vases</h1>
 
 						{% set entryQuery = craft.entries()
@@ -213,18 +211,17 @@
 
 						<h4>
 							{% for entry in entryQuery %}
-								<h3>{{ entry.title }}</h3>
+								<h2>{{ entry.title }}</h2>
 
-								{% set pictures = entry.picture.all() %}
-								{% for picture in pictures %}
-									<img src="{{ picture.url }}" alt="Flower picture" width="200" height="250">
-								{% endfor %}
+								<img src="{{ entry.picture.one().url }}" alt="Vase picture" width="200" height="250">
 
-                                <b>{{ entry.price|money }}</b>
+                                <h4>{{ entry.price|money }}</h4>
                                 
                                 {% if entry.information %}
-                                    <h4>Information</h4>
-                                    {{ entry.information|markdown }}
+                                    <details>
+                                        <summary>Information</summary>
+                                            <p>{{ entry.information }}</p>
+                                    </details>
                                 {% endif %}
 
 							{% endfor %}

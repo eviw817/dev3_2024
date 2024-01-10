@@ -1,4 +1,4 @@
-dateModified: 1704892147
+dateModified: 1704898808
 email:
   fromEmail: r0837764@student.thomasmore.be
   fromName: Floresco
@@ -21,16 +21,19 @@ meta:
     25f0379f-4317-4715-b3ec-066074e4ff3e: 'Reference Color' # Reference Color
     61da9f82-35d6-45cd-be8e-e2e50071b05d: Floresco # Floresco
     069c6f1f-2e87-4114-9fbf-46e09ac2cf9c: Vases # Vases
+    107ada6b-b0d4-44dd-85c1-b0f00b339dd2: Logo # Logo
     133c78df-33fb-423b-b305-8817da04930d: Common # Common
     702f6c4e-d790-4130-a6e4-5cff2f5105ec: Vases # Vases
     9316a557-8bdd-4dcd-b365-eb6573784803: Information # Information
     55719e45-c939-4b30-928a-7c1929ff87e3: Picture # Picture
+    365435bb-e590-4b38-91e8-6f6fe22b007d: Branding # Branding
     aba33779-afc2-4261-935f-1086e096b9b1: Manufacturer # Manufacturer
     b72d1f76-60ad-446a-9210-1f672441054b: Price # Price
     c64ba359-90a5-4532-ae67-803432b68398: Color # Color
     cf4e56b6-1254-4475-8b74-7dec1feece40: Flower # Flower
     e40437f4-f6c5-4dda-916f-18b505305057: Floresco # Floresco
     f6f9e9bd-7007-4998-a246-27fec2c9f480: Flowers # Flowers
+    f5648cce-da6c-4419-8deb-6169e914aafc: Branding # Branding
     fb5b2491-c473-4e5d-8952-94ed4820770c: Color # Color
 system:
   edition: solo
