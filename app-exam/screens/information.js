@@ -4,6 +4,7 @@ import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, S
 const InformationScreen = ({ navigation, route }) => {
 
     const [liked, setLiked] = useState(false);
+    const [saved, setSaved] = useState(false);
     const [flower, setFlower] = useState(
         {
             "title": "Daffodil",
@@ -62,10 +63,13 @@ const InformationScreen = ({ navigation, route }) => {
                         <Text style={styles.footerText}>Add to Likes</Text>
                     </View>
                 </TouchableOpacity>
-                <View style={styles.footerContent}>
-                    <Image source={require('../assets/empty_basket.png')} style={styles.icon} />
-                    <Text style={styles.footerText}>Add to Basket</Text>
-                </View>
+
+                <TouchableOpacity onPress={() => setSaved(!saved)}>
+                    <View style={styles.footerContent}>
+                        <Image source={(saved) ? require('../assets/shopping_basket.png') : require('../assets/empty_basket.png')} style={styles.icon}/>
+                        <Text style={styles.footerText}>Add to Basket</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
 
         </View>
@@ -100,11 +104,11 @@ const styles = StyleSheet.create({
         fontSize: 18,
     },
     icon: {
-        width: 40,
+        width: 45,
         height: 40,
     },
     footer: {
-        padding: 20,
+        padding: 50,
         backgroundColor: '#ffffff', // Footer background color
         flexDirection: 'row',
         justifyContent: 'space-evenly',
@@ -113,12 +117,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-    },
-    footerText: {
-        paddingLeft: 3,
-        alignContent: 'center',
-        fontSize: 16,
-        color: '#30BCED',
     },
 });
 
