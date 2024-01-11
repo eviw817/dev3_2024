@@ -32,7 +32,8 @@ return [
                         'price' => MoneyHelper::toString($entry -> price),
                         'info' => $entry -> information,
                         'bloomingSeason' => $entry -> bloomingSeason,
-                        'slug' => $entry -> slug
+                        'slug' => $entry -> slug,
+                        'id' => $entry -> id
                     ];
                 },
             ];
@@ -63,7 +64,8 @@ return [
                         'info' => $entry -> information,
                         'price' => MoneyHelper::toString($entry -> price),
                         'manufacturer' => $entry -> manufacturer,
-                        'slug' => $entry -> slug
+                        'slug' => $entry -> slug,
+                        'id' => $entry -> id
                     ];
                 }
             ];
