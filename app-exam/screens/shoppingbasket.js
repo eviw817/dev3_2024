@@ -9,14 +9,14 @@ const ShoppingbasketScreen = ({ navigation }) => {
 
       <ScrollView style={styles.content}>
             <View>
-                <Text style={styles.item}>Je hebt nog niets toegevoegd aan je winkelmand..</Text>
+                <Text style={styles.item}>Je hebt nog niets toegevoegd aan je winkelmand.</Text>
             </View>
         </ScrollView>
 
       <View style={styles.footer}>
         
-        <TouchableOpacity onPress={() => navigation.navigate('Favourites')}>
-          <Image source={require('../assets/favourite.png')} style={styles.icon} />
+        <TouchableOpacity onPress={() => navigation.navigate('Likes')}>
+          <Image source={require('../assets/heart.png')} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 

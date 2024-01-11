@@ -17,11 +17,13 @@ const HomeScreen = ({ navigation }) => {
       <FlatList
         style={styles.flatlist}
 
+        
+
       />
 
       <View style={styles.footer}>
-        <TouchableOpacity onPress={() => navigation.navigate('Favourites')}>
-          <Image source={require('../assets/favourite.png')} style={styles.icon} />
+        <TouchableOpacity onPress={() => navigation.navigate('Likes')}>
+          <Image source={require('../assets/heart.png')} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 
@@ -30,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.footerText}>Home</Text>
         </View>
 
-        <TouchableOpacity onPress={() => navigation.navigate('ShoppingBasket')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Shopping Basket')}>
           <Image source={require('../assets/shopping_basket.png')} style={styles.icon} />
           <Text style={styles.footerText}>Basket</Text>
         </TouchableOpacity>
@@ -44,11 +46,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#daedcb', // Background color of the entire page
+    backgroundColor: '#daedcb',
   },
   header: {
-    backgroundColor: '#ffffff', // Header background color
+    backgroundColor: '#f9d2a5',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
     alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 20,
   },
   logo: {
     width: 50,
@@ -73,7 +79,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    backgroundColor: '#ffffff', // Footer background color
+    backgroundColor: '#fef3f7', // Footer background color
     flexDirection: 'row',
     justifyContent: 'space-evenly',
   },

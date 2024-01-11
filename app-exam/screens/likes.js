@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from 'react-native';
 
-const FavouritesScreen = ({ navigation }) => {
+const LikesScreen = ({ navigation }) => {
 
   return (
 
@@ -9,13 +9,13 @@ const FavouritesScreen = ({ navigation }) => {
 
       <ScrollView style={styles.content}>
             <View>
-                <Text style={styles.item}>Je hebt nog niets toegevoegd aan je favorieten.</Text>
+                <Text style={styles.item}>Je hebt nog niets toegevoegd aan je likes.</Text>
             </View>
         </ScrollView>
 
       <View style={styles.footer}>
         <View>
-          <Image source={require('../assets/favourite.png')} style={styles.icon} />
+          <Image source={require('../assets/heart.png')} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </View>
 
@@ -79,5 +79,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default FavouritesScreen;
+export default LikesScreen;
 
