@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import FlowerItem from '../components/FlowerItem';
-import { View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, Platform } from 'react-native';
+import React, { useState, useEffect } from "react";
+import FlowerItem from "../components/FlowerItem";
+import { View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, Platform } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   const [flowers, setFlowers] = useState([
@@ -507,11 +507,11 @@ const HomeScreen = ({ navigation }) => {
 
   const fetchFlowers = async () => {
     try {
-      const response = await fetch(`${(Platform.OS == 'android') ? 'http://10.0.2.2' : 'http://craft-exam.ddev.site'}/api/flowers`, {
+      const response = await fetch(`${(Platform.OS == "android") ? "http://10.0.2.2" : "http://craft-exam.ddev.site"}/api/flowers`, {
         method: "GET",
         headers: {
-          'Accept': 'application/json',
-          'Content-type': 'application/json'
+          "Accept": "application/json",
+          "Content-type": "application/json"
         }
       });
       console.log(response.ok);
@@ -531,13 +531,13 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
 
       <View style={styles.header}>
-        <Image source={require('../assets/logo.png')} style={styles.logo} />
+        <Image source={require("../assets/logo.png")} style={styles.logo} />
         <Text style={styles.name}>Floresco</Text>
       </View>
 
       <View style={styles.input}>
         <TextInput placeholder="Search for flowers" />
-        <Image source={require('../assets/filter.png')} style={styles.filter} />
+        <Image source={require("../assets/filter.png")} style={styles.filter} />
       </View>
 
 
@@ -557,7 +557,7 @@ const HomeScreen = ({ navigation }) => {
             navigation={navigation}
             onSelectFlower={(selectedId) => {
               navigation.navigate(
-                'Information',
+                "Information",
                 { id: selectedId }
               )
             }}>
@@ -566,18 +566,18 @@ const HomeScreen = ({ navigation }) => {
       />
 
       <View style={styles.footer}>
-        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Likes')}>
-          <Image source={require('../assets/heart.png')} style={styles.icon} />
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Likes")}>
+          <Image source={require("../assets/heart.png")} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 
         <View style={styles.footerContent}>
-          <Image source={require('../assets/home.png')} style={styles.icon} />
+          <Image source={require("../assets/home.png")} style={styles.icon} />
           <Text style={styles.footerText}>Home</Text>
         </View>
 
-        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Shopping Basket')}>
-          <Image source={require('../assets/shopping_basket.png')} style={styles.icon} />
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Shopping Basket")}>
+          <Image source={require("../assets/shopping_basket.png")} style={styles.icon} />
           <Text style={styles.footerText}>Basket</Text>
         </TouchableOpacity>
 
@@ -589,15 +589,15 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#daedcb',
+    flexDirection: "column",
+    backgroundColor: "#daedcb",
   },
   header: {
-    backgroundColor: '#f9d2a5',
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#f9d2a5",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    justifyContent: "center",
     paddingTop: 20,
   },
   logo: {
@@ -609,14 +609,14 @@ const styles = StyleSheet.create({
   },
   input: {
     borderWidth: 2,
-    borderColor: '#F75590',
+    borderColor: "#F75590",
     borderRadius: 8,
     padding: 10,
     margin: 20,
     flex: 0,
     flexDirection: "row",
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: "space-between",
+    alignItems: "center",
   },
   flatlist: {
     flex: 1,
@@ -634,20 +634,20 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    backgroundColor: '#fef3f7', // Footer background color
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    backgroundColor: "#fef3f7", // Footer background color
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
   footerContent: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
 },
   footerText: {
     paddingLeft: 3,
-    alignContent: 'center',
+    alignContent: "center",
     fontSize: 16,
-    color: '#30BCED',
+    color: "#30BCED",
   },
 });
 

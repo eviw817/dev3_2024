@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from "react-native";
 
 const ShoppingbasketScreen = ({ navigation }) => {
 
@@ -15,18 +15,18 @@ const ShoppingbasketScreen = ({ navigation }) => {
 
       <View style={styles.footer}>
         
-        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Likes')}>
-          <Image source={require('../assets/heart.png')} style={styles.icon} />
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Likes")}>
+          <Image source={require("../assets/heart.png")} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Home')}>
-          <Image source={require('../assets/home.png')} style={styles.icon} />
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Home")}>
+          <Image source={require("../assets/home.png")} style={styles.icon} />
           <Text style={styles.footerText}>Home</Text>
           </TouchableOpacity>
 
         <View style={styles.footerContent}>
-          <Image source={require('../assets/shopping_basket.png')} style={styles.icon} />
+          <Image source={require("../assets/shopping_basket.png")} style={styles.icon} />
           <Text style={styles.footerText}>Basket</Text>
         </View>
 
@@ -38,8 +38,8 @@ const ShoppingbasketScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#daedcb', // Background color of the entire page
+    flexDirection: "column",
+    backgroundColor: "#daedcb", // Background color of the entire page
   },
   icon: {
     width: 50,
@@ -47,15 +47,15 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    backgroundColor: '#ffffff', // Footer background color
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    backgroundColor: "#ffffff", // Footer background color
+    flexDirection: "row",
+    justifyContent: "space-evenly",
   },
   footerText: {
     paddingLeft: 3,
-    alignContent: 'center',
+    alignContent: "center",
     fontSize: 16,
-    color: '#30BCED',
+    color: "#30BCED",
   },
 });
 

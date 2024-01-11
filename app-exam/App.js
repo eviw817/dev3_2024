@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './screens/homepage';
-import InformationScreen from './screens/information';
-import LikesScreen from './screens/likes';
-import ShoppingbasketScreen from './screens/shoppingbasket';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import HomeScreen from "./screens/homepage";
+import InformationScreen from "./screens/information";
+import LikesScreen from "./screens/likes";
+import ShoppingbasketScreen from "./screens/shoppingbasket";
 
 const Stack = createStackNavigator();
 

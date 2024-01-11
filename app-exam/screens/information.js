@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from 'react-native';
+import React, { useState, useEffect } from "react";
+import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from "react-native";
 
 const InformationScreen = ({ navigation, route }) => {
 
@@ -59,15 +59,13 @@ const InformationScreen = ({ navigation, route }) => {
             <View style={styles.footer}>
                 <TouchableOpacity onPress={() => setLiked(!liked)}>
                     <View style={styles.footerContent}>
-                        <Image source={(liked) ? require('../assets/heart.png') : require('../assets/empty_heart.png')} style={styles.icon}/>
-                        <Text style={styles.footerText}>Add to Likes</Text>
+                        <Image source={(liked) ? require("../assets/heart.png") : require("../assets/empty_heart.png")} style={styles.icon}/>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => setSaved(!saved)}>
                     <View style={styles.footerContent}>
-                        <Image source={(saved) ? require('../assets/shopping_basket.png') : require('../assets/empty_basket.png')} style={styles.icon}/>
-                        <Text style={styles.footerText}>Add to Basket</Text>
+                        <Image source={(saved) ? require("../assets/shopping_basket.png") : require("../assets/empty_basket.png")} style={styles.icon}/>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -79,26 +77,26 @@ const InformationScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#daedcb', // Background color of the entire page
+        flexDirection: "column",
+        backgroundColor: "#daedcb",
     },
     content: {
         padding: 20,
     },
     h1: {
         fontSize: 46,
-        fontWeight: 'bold',
-        color: '#30BCED',
+        fontWeight: "bold",
+        color: "#30BCED",
     },
     h3: {
         fontSize: 30,
-        fontWeight: 'bold',
-        color: '#F75590',
+        fontWeight: "bold",
+        color: "#F75590",
     },
     h4: {
         fontSize: 24,
-        fontWeight: 'bold',
-        color: '#EF8A17',
+        fontWeight: "bold",
+        color: "#EF8A17",
     },
     bodyText: {
         fontSize: 18,
@@ -109,14 +107,13 @@ const styles = StyleSheet.create({
     },
     footer: {
         padding: 50,
-        backgroundColor: '#ffffff', // Footer background color
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
+        backgroundColor: "#ffffff",
+        flexDirection: "row",
+        justifyContent: "space-evenly",
     },
     footerContent: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: "center",
     },
 });
 
