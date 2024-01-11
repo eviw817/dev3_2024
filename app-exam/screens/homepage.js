@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import FlowerItem from "../components/FlowerItem";
+import HeartSvg from "../components/Svgs/heartSvg";
+import HomeSvg from "../components/Svgs/homeSvg";
+import BasketSvg from "../components/Svgs/basketSvg";
 import { View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, Platform } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
@@ -567,17 +570,17 @@ const HomeScreen = ({ navigation }) => {
 
       <View style={styles.footer}>
         <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Likes")}>
-          <Image source={require("../assets/heart.png")} style={styles.icon} />
+          <HeartSvg height="45" width="40" filled={true} strokeWidth="100"></HeartSvg>
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 
         <View style={styles.footerContent}>
-          <Image source={require("../assets/home.png")} style={styles.icon} />
+          <HomeSvg height="45" width="40" strokeWidth="100"></HomeSvg>
           <Text style={styles.footerText}>Home</Text>
         </View>
 
         <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate("Shopping Basket")}>
-          <Image source={require("../assets/shopping_basket.png")} style={styles.icon} />
+          <BasketSvg height="45" width="40" filled={true} strokeWidth="100"></BasketSvg>
           <Text style={styles.footerText}>Basket</Text>
         </TouchableOpacity>
 
@@ -634,7 +637,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     padding: 20,
-    backgroundColor: "#fef3f7", // Footer background color
+    backgroundColor: "#fef3f7",
     flexDirection: "row",
     justifyContent: "space-evenly",
   },
@@ -642,7 +645,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-},
+  },
   footerText: {
     paddingLeft: 3,
     alignContent: "center",

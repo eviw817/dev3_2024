@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import HeartSvg from "../components/Svgs/heartSvg";
 import { ScrollView, View, TouchableOpacity, Image, Text, TextInput, FlatList, StyleSheet, } from "react-native";
+import BasketSvg from "../components/Svgs/basketSvg";
 
 const InformationScreen = ({ navigation, route }) => {
 
@@ -58,14 +60,14 @@ const InformationScreen = ({ navigation, route }) => {
 
             <View style={styles.footer}>
                 <TouchableOpacity onPress={() => setLiked(!liked)}>
-                    <View style={styles.footerContent}>
-                        <Image source={(liked) ? require("../assets/heart.png") : require("../assets/empty_heart.png")} style={styles.icon}/>
+                    <View>
+                        <HeartSvg height="45" width="40" filled={liked} strokeWidth="50"></HeartSvg>
                     </View>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => setSaved(!saved)}>
-                    <View style={styles.footerContent}>
-                        <Image source={(saved) ? require("../assets/shopping_basket.png") : require("../assets/empty_basket.png")} style={styles.icon}/>
+                    <View>
+                        <BasketSvg height="45" width="40" filled={saved} strokeWidth="50"></BasketSvg>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -106,14 +108,12 @@ const styles = StyleSheet.create({
         height: 40,
     },
     footer: {
-        padding: 50,
-        backgroundColor: "#ffffff",
+        paddingTop: 25,
+        paddingBottom: 25,
+        backgroundColor: "#fef3f7",
         flexDirection: "row",
         justifyContent: "space-evenly",
-    },
-    footerContent: {
-        flex: 1,
-        justifyContent: "center",
+        alignItems: "center"
     },
 });
 
