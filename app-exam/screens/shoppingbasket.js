@@ -15,17 +15,17 @@ const ShoppingbasketScreen = ({ navigation }) => {
 
       <View style={styles.footer}>
         
-        <TouchableOpacity onPress={() => navigation.navigate('Likes')}>
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Likes')}>
           <Image source={require('../assets/heart.png')} style={styles.icon} />
           <Text style={styles.footerText}>Likes</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+        <TouchableOpacity style={styles.footerContent} onPress={() => navigation.navigate('Home')}>
           <Image source={require('../assets/home.png')} style={styles.icon} />
           <Text style={styles.footerText}>Home</Text>
           </TouchableOpacity>
 
-        <View>
+        <View style={styles.footerContent}>
           <Image source={require('../assets/shopping_basket.png')} style={styles.icon} />
           <Text style={styles.footerText}>Basket</Text>
         </View>
@@ -40,27 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#daedcb', // Background color of the entire page
-  },
-  header: {
-    backgroundColor: '#ffffff', // Header background color
-    alignItems: 'center',
-  },
-  logo: {
-    width: 50,
-    height: 100,
-  },
-  name: {
-    fontSize: 20,
-  },
-  input: {
-    borderWidth: 2,
-    borderColor: '#F75590',
-    borderRadius: 8,
-    padding: 10,
-    margin: 20,
-  },
-  flatlist: {
-    padding: 20,
   },
   icon: {
     width: 50,
